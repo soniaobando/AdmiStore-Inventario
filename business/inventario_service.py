@@ -1,10 +1,13 @@
 from data.producto_dao import ProductoDAO
 
+from data.database import initialize_database
+
 
 class InventarioService:
 
-    def __init__(self):
-        self.dao = ProductoDAO()
+   def __init__(self):
+    initialize_database()
+    self.dao = ProductoDAO()
 
     def registrar_producto(self, nombre, precio, stock, stock_minimo):
         if not nombre.strip():
