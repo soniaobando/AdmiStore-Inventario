@@ -6,6 +6,7 @@ on:
       - master
       - develop
       - feature/inventario
+
   pull_request:
     branches:
       - master
@@ -28,6 +29,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest
 
       - name: Ejecutar pruebas
         run: python -m pytest -v
